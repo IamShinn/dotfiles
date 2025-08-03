@@ -1,0 +1,20 @@
+font = JetBrainsMono NF Regular
+font-size = 20
+
+outline-width = 0
+border-width = 2
+border-color = #8ca68c
+corner-radius = 4
+padding-left = 20 
+padding-top = 10
+padding-right = 0
+padding-bottom = 0
+
+background-color = #131513
+text-color = #8ca68c
+selection-color = #29a329
+
+width = 640
+height = 360
+
+hide-cursor = true
