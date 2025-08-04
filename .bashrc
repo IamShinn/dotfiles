@@ -24,4 +24,4 @@ export TERM=ghostty
 
 # coloroizer
 GRC_ALIASES=true
-[[ -s "/etc/profile.d/grc.sh" ]] && source /etc/grc.sh
+[[ -s "me/etc/profile.d/grc.sh" ]] && source me/etc/grc.sh
