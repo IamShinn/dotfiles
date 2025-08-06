@@ -39,7 +39,7 @@
         }
     },
     "pulseaudio": {
-        "format": "{volume}",
+        "format": "{volume}%",
         "format-muted": "",
         "format-bluetooth": "{icon} {format_source}",
         "format-bluetooth-muted": "Muted {format_source}",
