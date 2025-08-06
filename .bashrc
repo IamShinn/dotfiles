@@ -19,7 +19,7 @@ PS1='\[\e[32m\][\u\[\e[0m\] \[\e[97m\]\W\[\e[32m\]]\[\e[0m\]\$ '
 PS2="\[${yellow}\]>  \[${reset}\]";
 
 #defaults
-export EDITOR=vim
+export EDITOR=nvim
 export TERM=ghostty
 
 # coloroizer
