@@ -17,11 +17,23 @@
     ],
     "modules-right": [
         "tray",
+	"battery",
         "pulseaudio"
     ],
     "hyprland/workspaces":{
     	"all-outputs":true,
         "active-only":false
+    },
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% ",
+        "format-charging": "{capacity}%",
+        "format-plugged": "{capacity}%",
+        "format-alt": "{time} "
     },
     "tray": {
         "icon-size": 24,
