@@ -11,6 +11,7 @@ yay -S --noconfirm --needed tauon-music-box
 
 ##dotfiles
 git clone https://github.com/IamShinn/dotfiles
-sudo stow --adopt dotfiles
+cd dotfiles
+sudo stow -S *
 
 yay -Yc
