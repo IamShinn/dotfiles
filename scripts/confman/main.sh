@@ -8,10 +8,11 @@ git clone https://github.com/nvim-lua/kickstart.nvim.git "${XDG_CONFIG_HOME:-$HO
 yay -S --noconfirm --needed zen-browser-bin
 yay -S --noconfirm --needed tofi 
 yay -S --noconfirm --needed tauon-music-box 
+yay -S --noconfirm --needed dtach-ng-bin
 
 ##dotfiles
 git clone https://github.com/IamShinn/dotfiles
 cd dotfiles
 sudo stow -S *
 
-yay -Yc
+yay -Yc --nocofirm
