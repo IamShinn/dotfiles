@@ -18,5 +18,10 @@ sudo stow -S *
 ##dotfiles outside dotfiles
 sudo cp -r ./boot/hyprland-mac-style/ /usr/share/plymouth/themes/
 sudo plymouth-set-default-theme -R hyprland-mac-style 
+sudo mkinitcpio -p linux
+
+##greetd setup
+rm -rf /etc/greetd/ 
+cp -r ./boot/greetd/ /etc/
 
 yay -Yc --noconfirm
