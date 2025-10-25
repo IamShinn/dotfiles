@@ -15,4 +15,8 @@ git clone https://github.com/IamShinn/dotfiles
 cd dotfiles
 sudo stow -S *
 
-yay -Yc --nocofirm
+##dotfiles outside dotfiles
+sudo cp -r ./boot/hyprland-mac-style/ /usr/share/plymouth/themes/
+sudo plymouth-set-default-theme -R hyprland-mac-style 
+
+yay -Yc --noconfirm

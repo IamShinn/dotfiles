@@ -25,3 +25,9 @@ export TERM=ghostty
 # coloroizer
 GRC_ALIASES=true
 [[ -s "me/etc/profile.d/grc.sh" ]] && source me/etc/grc.sh
+
+#bash-completion
+[[ $PS1 &&
+  ! ${BASH_COMPLETION_VERSINFO:-} &&
+  -f /usr/share/bash-completion/bash_completion ]] &&
+    . /usr/share/bash-completion/bash_completion
