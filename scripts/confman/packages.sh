@@ -11,3 +11,4 @@ rm -rf yay
 
 #thunar
 sudo pacman -S --needed thunar fileroller thunar-archive-plugin thunar-media-tags-plugin ffmpegthumbnailer tumbler gvfs
+
