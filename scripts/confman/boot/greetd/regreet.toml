@@ -1,5 +1,5 @@
 [background]
-path = '/home/me/.config/hypr/background/bg2.jpg' 
+path = 'bg2.jpg' 
 fit = "Fit"
 
 [commands]
