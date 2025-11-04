@@ -5,7 +5,7 @@
     "position": "top", // (top|bottom|left|right)
     "height": 27, // (to be removed for auto height)
     "width": "auto",
-    "spacing": 3, // Gaps between modules
+    "spacing": 5, // Gaps between modules
     "margin": 0,
     "fixed-center": true,
     "reload_style_on_change": true,
@@ -18,21 +18,34 @@
     "modules-right": [
         "tray",
 	"battery",
+	"network",
         "pulseaudio"
     ],
     "hyprland/workspaces":{
     	"all-outputs":true,
-        "active-only":false
+        "active-only":false,
+	"persistent-workspaces": {
+      "*": 4
+    }
     },
     "battery": {
+	"bat": "BAT1",
         "states": {
             "good": 95,
             "warning": 30,
             "critical": 15
         },
         "format": "{capacity}% ",
-        "format-charging": "{capacity}%",
-        "format-plugged": "{capacity}+%",
+        "format-charging": "{capacity}+%",
+        "format-plugged-good": "{capacity}+%",
+    },
+    "network" : {
+	"format": "{ifname}",
+    	"format-wifi": "󰤨 ",
+	"format-disconnected" : "󰤭 ",
+    	"format-ethernet": "",
+	"tooltip-format-wifi": "󰤨  {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",
+	"on-click" : "ghostty -e impala"
     },
     "tray": {
         "icon-size": 20,
@@ -51,17 +64,11 @@
     },
     "pulseaudio": {
         "format": "{volume}%",
-        "format-muted": "",
+        "format-muted": " ",
         "format-bluetooth": "{icon} {volume}",
         "format-bluetooth-muted": " {volume}",
-        "format-icons": {
-            "default": [
-                "...",
-                "..",
-                "."
-            ]
-        },
-        "tooltip-format": "{icon} {volume}%\n{format_source}",
+	"on-click" : "pavucontrol",
+        "tooltip-format": "Volume: {volume}%\n{format_source}",
         "ignored-sinks": [
             "Easy Effects Sink"
         ]
