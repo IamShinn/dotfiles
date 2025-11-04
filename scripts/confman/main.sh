@@ -3,7 +3,6 @@
 sudo bash $(dirname "$0")/packages.sh
 git clone https://github.com/nvim-lua/kickstart.nvim.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
 
-
 #yay operations
 yay -S --noconfirm --needed zen-browser-bin
 yay -S --noconfirm --needed tofi 
@@ -22,6 +21,10 @@ cd ..
 sudo cp -r $(dirname "$0")/boot/hyprland-mac-style/ /usr/share/plymouth/themes/
 sudo plymouth-set-default-theme -R hyprland-mac-style 
 sudo mkinitcpio -p linux
+
+## set gtk theme
+gsettings set org.gnome.desktop.interface gtk-theme oomox-me
+gsettings set org.gnome.desktop.interface icon-theme oomox-Gigavolt 
 
 ##greetd setup
 sudo rm -rf /etc/greetd/ 
