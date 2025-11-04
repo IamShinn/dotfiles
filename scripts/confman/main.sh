@@ -14,7 +14,8 @@ yay -S --noconfirm --needed brightnessctl
 ##dotfiles
 # git clone https://github.com/IamShinn/dotfiles
 cd dotfiles
-sudo stow -S *
+sudo stow -D .
+sudo stow -S .
 cd ..
 
 ##dotfiles outside dotfiles
