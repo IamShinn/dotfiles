@@ -32,11 +32,10 @@
         },
         "format": "{capacity}% ",
         "format-charging": "{capacity}%",
-        "format-plugged": "{capacity}%",
-        "format-alt": "{time} "
+        "format-plugged": "{capacity}+%",
     },
     "tray": {
-        "icon-size": 24,
+        "icon-size": 20,
         "show-passive-items": true,
         "spacing": 10
     },

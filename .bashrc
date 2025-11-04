@@ -26,6 +26,9 @@ export TERM=ghostty
 GRC_ALIASES=true
 [[ -s "me/etc/profile.d/grc.sh" ]] && source me/etc/grc.sh
 
+#tmux autostart
+[ -z "$TMUX"  ] && { tmux attach || exec tmux new-session && exit;}
+
 #bash-completion
 [[ $PS1 &&
   ! ${BASH_COMPLETION_VERSINFO:-} &&
