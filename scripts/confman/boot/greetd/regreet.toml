@@ -1,6 +1,6 @@
 [background]
-path = 'bg2.jpg' 
-fit = "Fit"
+path = '/usr/share/bg/bg2.jpg' 
+fit = "Fill"
 
 [commands]
 reboot = [ "systemctl", "reboot" ]
