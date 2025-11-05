@@ -23,8 +23,10 @@ sudo plymouth-set-default-theme -R hyprland-mac-style
 sudo mkinitcpio -p linux
 
 ## set gtk theme
-gsettings set org.gnome.desktop.interface gtk-theme oomox-me
-gsettings set org.gnome.desktop.interface icon-theme oomox-Gigavolt 
+gsettings set org.gnome.desktop.interface gtk-theme 'oomox-me'
+gsettings set org.gnome.desktop.interface icon-theme 'oomox-Gigavolt' 
+gsettings get org.gnome.desktop.interface font-name 'JetBrainsMono Nerd Font 11'
+
 
 ##greetd setup
 sudo rm -rf /etc/greetd/ 
