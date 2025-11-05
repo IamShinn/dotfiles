@@ -93,7 +93,6 @@ vim.g.maplocalleader = ' '
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = false
 
-vim.g.netrw_banner = false
 -- [[ Setting options ]]
 -- See `:help vim.o`
 -- NOTE: You can change these options as you wish!
@@ -151,7 +150,7 @@ vim.o.splitbelow = true
 --   See `:help lua-options`
 --   and `:help lua-options-guide`
 vim.o.list = true
-vim.opt.listchars = { tab = '» ', trail = ' ', nbsp = '␣' }
+vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
 -- Preview substitutions live, as you type!
 vim.o.inccommand = 'split'
@@ -161,7 +160,6 @@ vim.o.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.o.scrolloff = 8
-vim.o.sidescrolloff = 8
 
 -- if performing an operation that would fail due to unsaved changes in the buffer (like `:q`),
 -- instead raise a dialog asking if you wish to save the current file(s)
@@ -309,7 +307,7 @@ require('lazy').setup({
       delay = 0,
       icons = {
         -- set icon mappings to true if you have a Nerd Font
-        mappings = vim.g.have_nerd_font,
+        mappings = false,
         -- If you are using a Nerd Font: set icons.keys to an empty table which will use the
         -- default which-key.nvim defined Nerd Font icons, otherwise define a string table
         keys = vim.g.have_nerd_font and {} or {
@@ -673,7 +671,8 @@ require('lazy').setup({
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
-        -- clangd = {},
+        clangd = {},
+        hyprls = {},
         -- gopls = {},
         -- pyright = {},
         -- rust_analyzer = {},
@@ -838,7 +837,31 @@ require('lazy').setup({
         --
         -- See :h blink-cmp-config-keymap for defining your own keymap
         preset = 'default',
+        ['<C-space>'] = { 'show', 'show_documentation', 'hide_documentation' },
+        ['<C-e>'] = { 'hide', 'fallback' },
 
+        ['<Tab>'] = {
+          function(cmp)
+            if cmp.snippet_active() then
+              return cmp.accept()
+            else
+              return cmp.select_and_accept()
+            end
+          end,
+          'snippet_forward',
+          'fallback',
+        },
+        ['<S-Tab>'] = { 'snippet_backward', 'fallback' },
+
+        ['<Up>'] = { 'select_prev', 'fallback' },
+        ['<Down>'] = { 'select_next', 'fallback' },
+        ['<C-p>'] = { 'select_prev', 'fallback_to_mappings' },
+        ['<C-n>'] = { 'select_next', 'fallback_to_mappings' },
+
+        ['<C-b>'] = { 'scroll_documentation_up', 'fallback' },
+        ['<C-f>'] = { 'scroll_documentation_down', 'fallback' },
+
+        ['<C-k>'] = { 'show_signature', 'hide_signature', 'fallback' },
         -- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
         --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
       },
@@ -846,13 +869,25 @@ require('lazy').setup({
       appearance = {
         -- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
         -- Adjusts spacing to ensure icons are aligned
-        nerd_font_variant = 'mono',
+        nerd_font_variant = 'normal',
       },
 
       completion = {
         -- By default, you may press `<c-space>` to show the documentation.
         -- Optionally, set `auto_show = true` to show the documentation after a delay.
-        documentation = { auto_show = false, auto_show_delay_ms = 500 },
+        documentation = {
+          auto_show = true,
+          auto_show_delay_ms = 200,
+          window = {
+            border = 'rounded',
+            winhighlight = 'Normal:Normal,FloatBorder:FloatBorder,CursorLine:BlinkCmpDocCursorLine,Search:None',
+          },
+        },
+        menu = {
+          border = 'rounded',
+          draw = { gap = 2 },
+          winhighlight = 'Normal:Normal,FloatBorder:FloatBorder,CursorLine:BlinkCmpMenuSelection,Search:None',
+        },
       },
 
       sources = {
@@ -896,8 +931,7 @@ require('lazy').setup({
       -- Load the colorscheme here.
       -- Like many other themes, this one has different styles, and you could load
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-      --vim.cmd.colorscheme 'tokyonight-night'
-      vim.opt.termguicolors = false
+      vim.cmd.colorscheme 'minispring'
     end,
   },
 
@@ -927,7 +961,7 @@ require('lazy').setup({
       --  and try some other statusline plugin
       local statusline = require 'mini.statusline'
       -- set use_icons to true if you have a Nerd Font
-      statusline.setup { use_icons = vim.g.have_nerd_font }
+      statusline.setup { use_icons = true }
 
       -- You can configure sections in the statusline by overriding their
       -- default behavior. For example, here we set the section for
@@ -999,17 +1033,17 @@ require('lazy').setup({
     -- default lazy.nvim defined Nerd Font icons, otherwise define a unicode icons table
     icons = vim.g.have_nerd_font and {} or {
       cmd = '⌘',
-      config = '',
-      event = '󰃭',
-      ft = '',
+      config = '🛠',
+      event = '📅',
+      ft = '📂',
       init = '⚙',
       keys = '🗝',
-      plugin = '',
-      runtime = '󰌢',
-      require = '',
-      source = '󰗚',
-      start = '',
-      task = '󰐃',
+      plugin = '🔌',
+      runtime = '💻',
+      require = '🌙',
+      source = '📄',
+      start = '🚀',
+      task = '📌',
       lazy = '💤 ',
     },
   },
