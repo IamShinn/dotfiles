@@ -98,12 +98,12 @@ vim.g.netrw_banner = false
 -- See `:help vim.o`
 -- NOTE: You can change these options as you wish!
 --  For more options, you can see `:help option-list`
-
+--
 -- Make line numbers default
 vim.o.number = true
 -- You can also add relative line numbers, to help with jumping.
 --  Experiment for yourself to see if you like it!
--- vim.o.relativenumber = true
+vim.o.relativenumber = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.o.mouse = "a"
@@ -133,7 +133,7 @@ vim.o.smartcase = true
 vim.o.signcolumn = "yes"
 
 -- Decrease update time
-vim.o.updatetime = 250
+vim.o.updatetime = 50
 
 -- Decrease mapped sequence wait time
 vim.o.timeoutlen = 300
@@ -152,6 +152,7 @@ vim.o.splitbelow = true
 --   and `:help lua-options-guide`
 vim.o.list = true
 vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
+vim.opt.wrap = false
 
 -- Preview substitutions live, as you type!
 vim.o.inccommand = "split"
@@ -176,8 +177,10 @@ vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
 -- Diagnostic keymaps
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
+
 vim.keymap.set("n", "<leader>e", vim.cmd.Ex, { desc = "Netrw files" })
-vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
+vim.keymap.set("n", "<leader>gs", vim.cmd.Git, { desc = "Git" })
+vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle, { desc = "Undo tree" })
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
@@ -252,6 +255,7 @@ require("lazy").setup({
 	-- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
 	"NMAC427/guess-indent.nvim", -- Detect tabstop and shiftwidth automatically
 	"tpope/vim-fugitive",
+	"mbbill/undotree",
 	{ "m4xshen/autoclose.nvim", opts = {} },
 	-- NOTE: Plugins can also be added by using a table,
 	-- with the first argument being the link and the following
