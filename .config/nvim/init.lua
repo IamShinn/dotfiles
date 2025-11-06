@@ -182,6 +182,9 @@ vim.keymap.set("n", "<leader>e", vim.cmd.Ex, { desc = "Netrw files" })
 vim.keymap.set("n", "<leader>gs", vim.cmd.Git, { desc = "Git" })
 vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle, { desc = "Undo tree" })
 
+vim.keymap.set("v", "J", ":m >+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m <-2<CR>gv=gv")
+
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
 -- is not what someone will guess without a bit more experience.
