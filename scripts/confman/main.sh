@@ -9,6 +9,7 @@ yay -S --noconfirm --needed tofi
 yay -S --noconfirm --needed tauon-music-box 
 yay -S --noconfirm --needed dtach-ng-bin
 yay -S --noconfirm --needed brightnessctl 
+yay -S --noconfirm --needed sioyek
 
 ##dotfiles
 # git clone https://github.com/IamShinn/dotfiles
