@@ -21,6 +21,7 @@ PS2="\[${yellow}\]>  \[${reset}\]";
 #defaults
 export EDITOR=nvim
 export TERM=ghostty
+export MANPAGER='nvim +Man!'
 
 # coloroizer
 GRC_ALIASES=true
