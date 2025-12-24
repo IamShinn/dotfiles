@@ -35,6 +35,7 @@ sudo mkdir /etc/greetd/
 sudo cp -r "$(dirname "$0")/boot/greetd"/* /etc/greetd/
 sudo mkdir /usr/share/bg
 sudo cp -r dotfiles/scripts/confman/boot/greetd/bg2.jpg /usr/share/bg/bg2.jpg
+cp -r dotfiles/scripts/confman/boot/default.desktop /usr/share/wayland-sessions/
 
 ## systemd 
 systemctl enable tlp.service
