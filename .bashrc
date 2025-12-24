@@ -35,3 +35,6 @@ GRC_ALIASES=true
   ! ${BASH_COMPLETION_VERSINFO:-} &&
   -f /usr/share/bash-completion/bash_completion ]] &&
     . /usr/share/bash-completion/bash_completion
+export GOPROXY=direct
+
+export PATH=$PATH:/home/me/.spicetify
