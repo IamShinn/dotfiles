@@ -18,9 +18,12 @@ sudo stow -S .
 cd ..
 
 ##dotfiles outside dotfiles
+sudo tee /etc/mkinitcpio.conf.d/custom-hooks.conf <<EOF >/dev/null
+HOOKS=(base udev plymouth autodetect microcode modconf kms keyboard keymap consolefont block filesystems fsck)
+EOF
 sudo cp -r $(dirname "$0")/boot/hyprland-mac-style/ /usr/share/plymouth/themes/
 sudo plymouth-set-default-theme -R hyprland-mac-style 
-sudo mkinitcpio -p linux
+sudo mkinitcpio -p linux -c custom-hooks.conf
 
 ## set gtk theme
 gsettings set org.gnome.desktop.interface gtk-theme 'oomox-me'
