@@ -76,3 +76,11 @@ tooltip label {
   animation-iteration-count: infinite;
   animation-direction: alternate;
 }
+#battery.critical:not(.charging){
+  color: #ff0000;
+  animation-name: blink;
+  animation-duration: 0.2s;
+  animation-timing-function: steps(2);
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
