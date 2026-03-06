@@ -30,6 +30,7 @@ sudo mkinitcpio -p linux -c custom-hooks.conf
 gsettings set org.gnome.desktop.interface gtk-theme 'oomox-me'
 gsettings set org.gnome.desktop.interface icon-theme 'oomox-Gigavolt' 
 gsettings get org.gnome.desktop.interface font-name 'JetBrainsMono Nerd Font 11'
+gsettings set org.gnome.desktop.interface cursor-theme 'Posy Cursor Black'
 
 ##greetd setup
 sudo rm -rf /etc/greetd/ 
