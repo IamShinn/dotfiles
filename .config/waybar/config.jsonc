@@ -58,6 +58,7 @@
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "calendar": {
             "format": {
+		"weeksdays": "{:%U}",
 		"today": "<span color='#29a329'><b><u>{}</u></b></span>"
             }
         }
