@@ -11,5 +11,5 @@ cd ..
 rm -rf yay-bin
 
 #thunar
-sudo pacman -S --needed thunar fileroller thunar-archive-plugin thunar-media-tags-plugin ffmpegthumbnailer tumbler gvfs gvfs-mtp
+sudo pacman -S --needed thunar file-roller thunar-archive-plugin thunar-media-tags-plugin ffmpegthumbnailer tumbler gvfs gvfs-mtp
 
