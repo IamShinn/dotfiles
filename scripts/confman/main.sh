@@ -1,7 +1,10 @@
 # !/bin/bash
-yes | sudo pacman -Syu
-mapfile -t packages < <(grep -v '^#' "$(dirname "$0")/packages-list" | grep -v '^$')
 sudo bash $(dirname "$0")/packages.sh
+cd yay-bin && makepkg -si
+cd ..
+rm -rf yay-bin
+
+
 git clone https://github.com/nvim-lua/kickstart.nvim.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
 
 #yay operations
