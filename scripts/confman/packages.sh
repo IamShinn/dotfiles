@@ -1,8 +1,6 @@
 #!/bin/bash
 #pacman instalation
 
-yes | sudo pacman -Syu
-mapfile -t packages < <(grep -v '^#' "$(dirname "$0")/packages-list" | grep -v '^$')
 sudo pacman -S --noconfirm --needed "${packages[@]}"
 
 #installing yay

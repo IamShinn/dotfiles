@@ -1,5 +1,6 @@
 # !/bin/bash
-#packages
+yes | sudo pacman -Syu
+mapfile -t packages < <(grep -v '^#' "$(dirname "$0")/packages-list" | grep -v '^$')
 sudo bash $(dirname "$0")/packages.sh
 git clone https://github.com/nvim-lua/kickstart.nvim.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
 
