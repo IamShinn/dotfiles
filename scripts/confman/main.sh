@@ -13,7 +13,7 @@ yay -S --noconfirm --needed tofi
 yay -S --noconfirm --needed tauon-music-box 
 yay -S --noconfirm --needed brightnessctl 
 yay -S --noconfirm --needed sioyek
-yay -S --noconfirm --needed cudatext-gtk2-bin
+#yay -S --noconfirm --needed cudatext-gtk2-bin
 
 ##dotfiles
 # git clone https://github.com/IamShinn/dotfiles
