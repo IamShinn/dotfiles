@@ -38,3 +38,5 @@ polkit-gnome
 woff2-font-awesome
 man-db
 ripgrep-all
+unzip
+ripgrep
