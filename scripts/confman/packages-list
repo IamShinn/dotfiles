@@ -40,3 +40,6 @@ man-db
 ripgrep-all
 unzip
 ripgrep
+wpa_supplicant
+dhcpcd
+networkmanager
